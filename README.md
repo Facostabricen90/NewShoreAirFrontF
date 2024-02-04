@@ -19,10 +19,10 @@ The project currently consumes the api, obtains origin and destination, and allo
 
 ### 3. Installation: 
 
-- Clone repository 
+- Clone repository https://github.com/Facostabricen90/NewShoreAirFrontF
 - cd (Find repository path)
 - npm install (Module installation)
-- ng serve (Program Execution)
+- ng serve -o (Program Execution)
 
 ## Administracion del servidor
 ***
