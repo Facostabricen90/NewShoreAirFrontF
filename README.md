@@ -24,7 +24,6 @@ The project currently consumes the api, obtains origin and destination, and allo
 - npm install (Module installation)
 - ng serve -o (Program Execution)
 
-## Administracion del servidor
 ***
 
 ## Development server
