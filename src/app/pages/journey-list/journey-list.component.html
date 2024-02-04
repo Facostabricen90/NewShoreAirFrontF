@@ -1,0 +1,28 @@
+@if (journeyResult$ | async; as resultObject) {
+<ul class="journey-list">
+  <br>
+  <div class="alert alert-success">
+    <h5>Journey information</h5><br>
+    <div> Origen: {{getOrigin(resultObject) }}</div><br>
+    <div> Destination: {{getDestination(resultObject) }}</div><br>
+    <div> Price: {{getPrice(resultObject) }}</div><br>
+  </div>
+
+
+  <div class="alert alert-success">
+    <h5>Flights</h5><br>
+    <ng-container *ngFor="let item of getFlights(resultObject); let i = index;">
+      <div class="alert alert-primary">
+        <div>Flight #{{ i + 1 }}</div>
+        <div>Origin: {{ getOrigin(item) }} </div>
+        <div>Destination: {{ getDestination(item) }} </div>
+        <div>Transport: {{getTransportCarrier(getTransport(item))}} {{getTransportNumber(getTransport(item))}}</div>
+        <div>Price: {{getPrice(item)}}</div>
+      </div>
+    </ng-container>
+  </div>
+
+</ul>
+} @else if (errorMessage) {
+  <app-error-message [errorMessage]="errorMessage"/>
+}

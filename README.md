@@ -1,6 +1,31 @@
 # NewShoreAirFrontF
 
+## General Info
+***
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+
+This is the Frontend of the test project presenting for the NewShore company. It is based on a flight search engine in which the origin and destination are taken and based on these it consumes: 1. Own API 2. Business API and receive information, in order to obtain the available flights, the price and the routes.
+
+The frontend is responsible for receiving the data to then be consumed by the API and visually reflect the data.
+
+The project currently consumes the api, obtains origin and destination, and allows you to select the type of currency. Search and find direct flights (level 0) and show their cost.
+
+## Frontend Requirements:
+***
+
+### 1. Angular CLI
+
+### 2. NodeJs
+
+### 3. Installation: 
+
+- Clone repository 
+- cd (Find repository path)
+- npm install (Module installation)
+- ng serve (Program Execution)
+
+## Administracion del servidor
+***
 
 ## Development server
 

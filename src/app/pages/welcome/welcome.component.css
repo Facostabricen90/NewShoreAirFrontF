@@ -1,0 +1,11 @@
+.container {
+  text-align: center;
+}
+
+.bienvenida {
+  display: inline-block;
+  color: aliceblue;
+  font-size: 60px;
+  text-decoration: double;
+  text-shadow: 2px 2px 2px #CE5937;
+}

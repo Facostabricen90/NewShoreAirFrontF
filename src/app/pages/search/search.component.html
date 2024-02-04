@@ -1,0 +1,48 @@
+<div class="title-contain">
+  <h5>Selected your next travel</h5>
+</div>
+<div class="contain p-5" >
+  <form>
+    <div class="row">
+      <div class="mb-3 col-lg-2">
+        <label for="originId">Origin</label>
+        <select [(ngModel)]="origin" name="origin" id="originId" class="form-select">
+          <option value="MZL">Manizales</option>
+          <option value="MDE">Medellin</option>
+          <option value="CTG">Cartagena</option>
+          <option value="PEI">Pererira</option>
+          <option value="BOG">Bogota</option>
+          <option value="BCN">Barcelona</option>
+          <option value="CAN">Canada</option>
+          <option value="MAD">Madrid</option>
+          <option value="MEX">Mexico</option>
+        </select>
+      </div>
+      <div class="mb-3 col-lg-2">
+        <label for="destinationId">Destination</label>
+        <select [(ngModel)]="destination" name="destination" id="destinationId" class="form-select">
+          <option value="MZL">Manizales</option>
+          <option value="MDE">Medellin</option>
+          <option value="CTG">Cartagena</option>
+          <option value="PEI">Pererira</option>
+          <option value="BOG">Bogota</option>
+          <option value="BCN">Barcelona</option>
+          <option value="CAN">Canada</option>
+          <option value="MAD">Madrid</option>
+          <option value="MEX">Mexico</option>
+        </select>
+      </div>
+      <div class="mb-3 col-lg-2">
+        <label for="currencyId">Currency</label>
+        <select [(ngModel)]="currency" name="currency" id="currencyId" class="form-select">
+          <option value="CO">CO</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+      <div class="col-lg-5">
+        <button (click)="submitForm()" class="btn btn-mn" >Search</button>
+      </div>
+    </div>
+  </form>
+</div>

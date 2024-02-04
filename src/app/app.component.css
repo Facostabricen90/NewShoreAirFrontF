@@ -1,0 +1,34 @@
+.global-container {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "content";
+  height: 100vh;
+  background-image: url('../assets/Banner.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(0.8);
+}
+
+.global-container::before {
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "content";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad (ajusta según sea necesario) */
+  z-index: 1; /* Asegura que el filtro esté encima de la imagen */
+}
+
+app-nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: auto;
+}
