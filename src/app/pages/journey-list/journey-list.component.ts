@@ -29,6 +29,7 @@ export class JourneyListComponent {
     }
   }
   datos() {
+    console.log(this.OriginR, this.DestinationR, this.currencyR);
    this.journeyResult$ = this.service.getJourneyList(this.OriginR, this.DestinationR).pipe(catchError((error: string) =>{
     if (error == "Error code: 500, message: Http failure response for http://localhost:5038/null/null: 500 Internal Server Error" || error == "Failed to load resource: the server responded with a status of 500 (Internal Server Error)") {
       this.errorMessage = "";

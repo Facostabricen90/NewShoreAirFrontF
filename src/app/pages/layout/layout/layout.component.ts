@@ -20,7 +20,7 @@ export class LayoutComponent {
     this.originInput = event.originInput;
     this.destinationInput = event.destinationInput;
     this.currencyR = event.currencyR;
+    console.log(event.originInput, event.destinationInput, event.currencyR);
   }
-
 
 }

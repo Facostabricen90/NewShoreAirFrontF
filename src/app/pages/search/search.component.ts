@@ -30,7 +30,6 @@ export class SearchComponent {
       const currencyR = this.currency;
       console.log(originInput, destinationInput, currencyR);
 
-      // Aquí puedes emitir un evento o realizar otras acciones con los datos
       this.searchSubmitted.emit({
         originInput: originInput,
         destinationInput: destinationInput,
