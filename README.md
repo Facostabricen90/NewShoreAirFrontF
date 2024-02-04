@@ -4,7 +4,7 @@
 ***
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
 
-This is the Frontend of the test project presenting for the NewShore company. It is based on a flight search engine in which the origin and destination are taken and based on these it consumes: 1. Own API 2. Business API and receive information, in order to obtain the available flights, the price and the routes.
+This is the Frontend of the test project presenting for the NewShore company. It is based on a flight search engine in which the origin and destination are taken and based on these it consumes: 1. Own API 2. Business API and receive information, in order to obtain the available flights, the price and the routes, implementing concepts such as lazy load and magic literals.
 
 The frontend is responsible for receiving the data to then be consumed by the API and visually reflect the data.
 
