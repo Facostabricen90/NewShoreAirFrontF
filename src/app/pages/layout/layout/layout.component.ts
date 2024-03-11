@@ -11,12 +11,11 @@ import { JourneyListComponent } from '../../journey-list/journey-list.component'
 })
 export class LayoutComponent {
 
-  originInput: string | null = null;
-  destinationInput: string | null = null;
-  currencyR: string | null = null;
+  originInput: string = '';
+  destinationInput: string = '';
+  currencyR: string = '';
 
   onSearchSubmitted(event: any) {
-    // Manejar los datos enviados por el componente app-search
     this.originInput = event.originInput;
     this.destinationInput = event.destinationInput;
     this.currencyR = event.currencyR;

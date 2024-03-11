@@ -1,4 +1,4 @@
 export interface Transport {
-  FlightCarrier: string;
-  FlightNumber: string;
+  flightCarrier: string;
+  flightNumber: string;
 }
