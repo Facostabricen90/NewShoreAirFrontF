@@ -27,6 +27,8 @@ export class JourneyListComponent {
   public errorMessage!: string;
   public journeyResult$: Flight[] = [];
   public currencyResponse: string = '';
+  totalPrice: number = 0;
+  totalPriceFormatted: string = '';
 
   constructor(private journeyService: JourneyService) {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -58,18 +60,52 @@ export class JourneyListComponent {
         console.log('Respuesta exitosa de la solicitud HTTP:', data);
       }
       console.log(this.journeyResult$);
+      this.calcularTotalPrice();
     });
   }
 
-  getPrice(price: number): string {
-    this.currencyResponse = '$' + price;
+  calcularTotalPrice() {
+    this.totalPrice = this.journeyResult$.reduce((accumulator, currentFlight) => {
+      let flightPrice: number = currentFlight.price;
+
+      if (this.currencyR === 'CO') {
+        flightPrice *= 5000;
+      } else if (this.currencyR === 'EUR') {
+        flightPrice *= 0.91;
+      }
+
+      return accumulator + flightPrice;
+    }, 0);
+
     if (this.currencyR === 'CO') {
-      price *= 5000;
-      this.currencyResponse = '$' + price;
+      this.totalPriceFormatted = '$' + this.totalPrice.toFixed(2);
     } else if (this.currencyR === 'EUR') {
-      price *= 0.91;
-      this.currencyResponse = '€' + price;
+      this.totalPriceFormatted = '€' + this.totalPrice.toFixed(2);
+    } else {
+      this.totalPriceFormatted = '$' + this.totalPrice.toFixed(2);
     }
-    return this.currencyResponse;
+  }
+
+  getPrice(price: number): string {
+    let convertedPrice: number = price;
+
+    if (this.currencyR === 'CO') {
+      convertedPrice *= 5000;
+    } else if (this.currencyR === 'EUR') {
+      convertedPrice *= 0.91;
+    }
+
+    const formattedPrice: string = convertedPrice.toLocaleString('es-CO', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    if (this.currencyR === 'CO') {
+      return '$ ' + formattedPrice;
+    } else if (this.currencyR === 'EUR') {
+      return '€ ' + formattedPrice;
+    } else {
+      return '$ ' + formattedPrice;
+    }
   }
 }

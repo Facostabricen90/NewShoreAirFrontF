@@ -15,9 +15,9 @@ export class SearchComponent {
 
   @Output() searchSubmitted = new EventEmitter<any>();
 
-  originR: any | null;
-  destinationR: any | null;
-  currencyR: any | null;
+  originR: string = '';
+  destinationR: string = '';
+  currencyR: string = '';
 
   origin = ''
   destination = ''

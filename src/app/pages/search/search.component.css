@@ -5,7 +5,7 @@ button{
 }
 
 button:hover{
-  background-color: rgb(57, 138, 95);
+  background-color: rgba(255,117,117,1);
 }
 
 .title-contain{

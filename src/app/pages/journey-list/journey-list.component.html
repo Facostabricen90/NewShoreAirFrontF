@@ -1,21 +1,40 @@
 <div>
-  <h1>Journey List</h1>
-  <div *ngIf="journeyResult$.length == 0">
-    <p>{{ errorMessage }}</p>
+  <div *ngIf="journeyResult$.length == 0" class="text-center">
+    <p class="errorMessage">{{ errorMessage }}</p>
   </div>
-  <div *ngIf="journeyResult$.length > 0">
-    <h2>Flight Information</h2>
-    <ul>
-      <li *ngFor="let flight of journeyResult$">
-        <p>Origin: {{ flight.origin }}</p>
-        <p>Destination: {{ flight.destination }}</p>
-        <p>Price: {{ getPrice(flight.price) }}</p>
-        <div *ngIf="flight.transport">
-          <p>Transporter: {{ flight.transport.flightCarrier }}</p>
-          <p>Flight Number: {{ flight.transport.flightNumber }}</p>
+  <div class="d-flex justify-content-center align-items-center">
+    <div *ngIf="journeyResult$.length > 0" class="row">
+      <h1>Journey List</h1>
+      <div class="col-sm-12">
+        <div class="card text-white bg-danger mb-3">
+          <div class="card-header">Flights Information</div>
+          <div class="card-body">
+            <div *ngFor="let flight of journeyResult$">
+              <div *ngIf="flight.transport">
+                <h5 class="card-title">Transporter: {{ flight.transport.flightCarrier }}</h5>
+                <ul>
+                  <li><p>Origin: {{ flight.origin }}</p></li>
+                  <li><p>Destination: {{ flight.destination }}</p></li>
+                  <li><p>Price: {{ getPrice(flight.price) }}</p></li>
+                  <li><p>Flight Number: {{ flight.transport.flightNumber }}</p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
+      </div>
+      <div class="col-sm-12">
+        <div class="card text-white bg-danger mb-3">
+          <div class="card-header">Journey Information</div>
+          <div class="card-body">
+            <h5 class="card-title">Total Price: {{ totalPrice | currency }}</h5>
+            <ul>
+              <li><p>Origin: {{ OriginR }}</p></li>
+              <li><p>Destination: {{ DestinationR }}</p></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-

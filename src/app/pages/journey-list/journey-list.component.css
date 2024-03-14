@@ -12,4 +12,13 @@
   padding-top: 0;
 }
 
+.errorMessage{
+  font-size: 60px;
+  color: aliceblue;
+}
+
+h1{
+  color: aliceblue;
+}
+
 
